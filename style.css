@@ -356,29 +356,67 @@
 /* banner2 */
 
 /* product cards */
+/* product cards */
 #product-cards{
     font-family: 'Roboto Slab', serif;
     margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* spacing between cards */
 }
+
 #product-cards .card{
+    width: 250px; /* fixed width */
+    height: 600px; /* fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white; /* optional: ensures consistent background */
+    border-radius: 5px; /* optional: rounded corners */
+    overflow: hidden; /* keeps content inside card */
 }
+
+#product-cards .card img{
+    width: 100%;
+    height: 60%;
+    object-fit: 50%; /* ensures image fits nicely */
+}
+
 #product-cards h1{
     margin-top: 30px;
     color: black;
     text-shadow: 1px 1px 1px black;
+    text-align: center;
 }
+
 #product-cards h3{
     letter-spacing: 3px;
     color: black;
     text-shadow: 0px 1px 1px black;
     font-weight: bold;
+    text-align: center;
 }
+
 #product-cards h5 span{
     float: right;
     color: black;
     cursor: pointer;
 }
+
+/* Product cards hover effect */
+#product-cards .card:hover {
+    transform: translateY(-10px); /* Slight lift */
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 14px 29px 0px; /* Stronger shadow */
+}
+
+#product-cards .card:hover {
+    transform: translateY(-10px); /* Slight lift */
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 14px 29px 0px; /* Stronger shadow */
+}
+
 .checked{
     color: rgb(255, 187, 0);
 }
@@ -399,25 +437,8 @@
 }
 #viewmorebtn:hover{
     background-color: black;
-    color: white;
+    color: brown;
 }
-/* product cards */
-
-
-
-
-
-
-/* offer */
-#offer{
-    margin-top: 50px;
-}
-#offer i{
-    font-size: 60px;
-    color: black;
-}
-/* offer */
-
 /* footer */
 #footer{
     padding: 0 0 30px 0;
@@ -426,22 +447,26 @@
     background: black;
     font-family: 'Roboto Slab', serif;
 }
+
 #footer .footer-top{
     padding: 60px 0 30px;
     background: black;
     color: white;
 }
+
 #footer .footer-top .footer-contact h3{
     color: white;
     text-shadow: 1px 1px 1px black;
 }
+
 #footer .footer-top .footer-contact h4{
     font-size: 22px;
-    margin:  0 0 300px 0;
+    margin: 0 0 300px 0;
     padding: 2px 0 2px 0;
     line-height: 1;
     font-weight: 700;
 }
+
 #footer .footer-top .footer-contact p{
     font-size: 14px;
     margin: 0;
@@ -449,32 +474,39 @@
     line-height: 1;
     font-weight: 700;
 }
+
 #footer .footer-top h4{
     font-size: 16px;
     font-weight: bold;
     position: relative;
     padding-bottom: 12px;
 }
+
 #footer .footer-top .footer-links{
     margin-bottom: 30px;
 }
+
 #footer .footer-top .footer-links ul{
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 #footer .footer-top .footer-links ul li{
     padding-right: 10px 0;
     display: flex;
     align-items: center;
 }
+
 #footer .footer-top .footer-links ul li:first-child{
     padding: 0;
 }
+
 #footer .footer-top .footer-links ul li a{
     color: white;
     line-height: 2;
 }
+
 #footer .footer-top .socail-links a{
     font-size: 18px;
     display: inline-block;
@@ -487,169 +519,305 @@
     height: 36px;
     transition: 0.5s ease;
 }
+
+#footer .socail-links a:hover{
+    color: burlywood; /* subtle hover effect for social icons */
+}
+
 #footer .copyright{
     text-align: center;
-    float: left; 
+    float: left;
 }
+
 #footer .credits{
     float: right;
     text-align: center;
 }
-/* footer */
+
+/* Smooth scrolling for arrow */
 html{
     scroll-behavior: smooth;
 }
-.arrow{
-    position: fixed;
-    background-color: white;
-    border-radius: 50px;
-    height: 50px;
-    bottom: 40px;
-    right: 50px;
-    text-decoration: none;
-    align-items: center;
-    line-height: 50px;
-}
-
-/* login */
-.login{
-    width: 50%;
-    margin: 20px;
+/* LOGIN SECTION */
+.login {
+    margin-top: 60px;
+    margin-bottom: 60px;
     font-family: 'Roboto Slab', serif;
 }
-#side1{
+
+/* Left side (welcome) */
+#side1 {
     background-color: black;
-    height: 76vh;
-    border-radius: 5px;
-    box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
-}
-#side1 h3{
-    color: white;
-    font-weight: bold;
-    text-shadow: 1px 1px 1px black;
-    margin-top: 200px;
-    align-items: center;
+    height: 100%;
+    border-radius: 8px 0 0 8px;
+    padding: 40px 20px;
     text-align: center;
-}
-#side1 p{
-    color: white;    
-    font-weight: bold;
-    align-items: center;
-    text-align: center;
-}
-#btn{
-    align-items: center;
-    text-align: center;
-    border: 2px solid white;
-    border-radius: 10px;
-}
-#btn a{
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: white;
 }
-#side2{
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
-    align-items: center;
-    text-align: center;
-}
-#side2 h3{
-    margin-top: 50px;
-    color: black;
-    font-weight: bold;
-}
-#side2 .inp{
-    margin-top: 32px;
-}
-#side2 input{
-    width: 500px;
-    margin-top: 20px;
-    height: 36px;
-    align-items: center;
-}
-#side2 p{
-    margin-top: 20px;
-    cursor: pointer;
-}
-#side2 .icons i{
-    margin-left: 10px;
-    cursor: pointer;
-}
-#login{
-    margin-top: 10px;
-}
-#login button{
-    width: 200px;
-    height: 32px;
-    color: white;
-    background-color: bisque;
-    border: none;
-    font-weight: bold;
-}
-@media screen and (max-width:992px){
-    #side2 input{
-        width: 300px;
-    }
-}
-@media screen and (max-width:330x){
-    #side2 input{
-        width: 200px;
-    }
-}
-/* login */
 
-/* about */
-#about{
-    margin-top: 50px;
-}
-#about h1{
-    text-align: center;    
+#side1 h3 {
     font-weight: bold;
-    color: black;
+    margin-bottom: 15px;
 }
-/* about */
 
-/* contact */
-#contact{
-    margin-top: 50px;
-}
-#contact h1{
-    color: black;
-    text-shadow: 0px 0px 1px black;
-}
-#contact .card{
-    height: 80px;
-    margin-top: 20px;
-    box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
-}
-#contact .card i{
-    margin-top: 10px;
-    margin-left: 10px;
+#side1 p {
+    margin-bottom: 25px;
     font-size: 15px;
-    color: black;
-    font-weight: bold;
-    letter-spacing: 3px;
 }
-#contact .card h6{
-    margin-left: 10px;
-    margin-top: 10px;
-    letter-spacing: 3px;
-    font-weight: bold;
+
+#side1 #btn {
+    margin-top: 20px;
+}
+
+#side1 #btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: burlywood;
+    border-radius: 5px;
+    text-decoration: none;
     color: black;
-}#messagebtn button{
-    margin-top: 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+#side1 #btn a:hover {
+    background: white;
+    color: black;
+}
+
+/* Right side (form) */
+#side2 {
+    background-color: white;
+    border-radius: 0 8px 8px 0;
+    padding: 50px 40px;
+    box-shadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
+    text-align: center;
+}
+
+#side2 h3 {
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: black;
+}
+
+#side2 .inp {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#side2 input {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#side2 input:focus {
+    border-color: burlywood;
+    box-shadow: 0 0 5px rgba(222, 184, 135, 0.7);
+}
+
+/* Forgot password */
+#side2 p {
+    margin-top: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+    transition: 0.3s;
+}
+#side2 p:hover {
+    text-decoration: underline;
+}
+
+/* Social icons */
+#side2 .icons {
+    margin-top: 20px;
+}
+#side2 .icons i {
+    margin: 0 10px;
+    font-size: 20px;
+    color: black;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#side2 .icons i:hover {
+    color: burlywood;
+}
+
+/* Login button */
+#login {
+    margin-top: 25px;
+}
+#login button {
     width: 200px;
-    height: 33px;
-    background: transparent;
-    border: 2px solid white;
-    color: black;
-    font-weight: bold;
-    letter-spacing: 3px;
-    transition: 0.5s ease;
-}
-#messagebtn button:hover{
+    padding: 10px;
     background-color: black;
     color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s ease;
 }
-/* contact */
+#login button:hover {
+    background-color: burlywood;
+    color: black;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    #side1 {
+        border-radius: 8px 8px 0 0;
+        padding: 30px 15px;
+    }
+    #side2 {
+        border-radius: 0 0 8px 8px;
+        padding: 30px 20px;
+    }
+}
+/* SIGNUP SECTION */
+.login {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-family: 'Roboto Slab', serif;
+}
+
+/* Left side (join the crew) */
+#side1 {
+    background-color: black;
+    height: 100%;
+    border-radius: 8px 0 0 8px;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+#side1 h3 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#side1 p {
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+#side1 #btn {
+    margin-top: 20px;
+}
+
+#side1 #btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: burlywood;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+#side1 #btn a:hover {
+    background: white;
+    color: black;
+}
+
+/* Right side (form) */
+#side2 {
+    background-color: white;
+    border-radius: 0 8px 8px 0;
+    padding: 50px 40px;
+    box-shadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
+    text-align: center;
+}
+
+#side2 h3 {
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: black;
+}
+
+#side2 .inp {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#side2 input {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#side2 input:focus {
+    border-color: burlywood;
+    box-shadow: 0 0 5px rgba(222, 184, 135, 0.7);
+}
+
+/* Small text */
+#side2 p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Social icons */
+#side2 .icons {
+    margin-top: 20px;
+}
+#side2 .icons i {
+    margin: 0 10px;
+    font-size: 20px;
+    color: black;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#side2 .icons i:hover {
+    color: burlywood;
+}
+
+/* Signup button */
+#login {
+    margin-top: 25px;
+}
+#login button {
+    width: 200px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+#login button:hover {
+    background-color: burlywood;
+    color: black;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    #side1 {
+        border-radius: 8px 8px 0 0;
+        padding: 30px 15px;
+    }
+    #side2 {
+        border-radius: 0 0 8px 8px;
+        padding: 30px 20px;
+    }
+}
